@@ -5,11 +5,14 @@ int main()
 {
     char op;
     double primernumero, segundonumero;
-    printf("El usuario tiene que escribir lo que quiere en el operator: ");
+
+    printf("--- Calculadora Simple ---\n");
+    printf("Elija un operador (+, -, , /): ");
     scanf(" %c", &op);
-    printf("Ingrese el primer número: ");
+
+    printf("Ingrese el primer numero: ");
     scanf("%lf", &primernumero);
-    printf("Ingrese el segundo número: ");
+    printf("Ingrese el segundo numero: ");
     scanf("%lf", &segundonumero);
 
     switch (op) {
@@ -26,11 +29,13 @@ int main()
             if (segundonumero != 0) {
                 printf("Resultado: %.2lf\n", primernumero / segundonumero);
             } else {
-                printf("Error: División por cero no es permitida.\n");
+                printf("Error: Division por cero.\n");
             }
             break;
         default:
-            printf("Operador inválido.\n");
+            printf("Operador no reconocido.\n");
     }
+
+    return 0; // Indica que el programa finalizó correctamente
 }
    
