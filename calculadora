@@ -15,14 +15,15 @@ int main()
     printf("Segundo numero: ");
     scanf("%lf", &num2);
 
-    printf("Operador (+, -, *, /, ^): ");
+    printf("Operador (+, -, *, /, ^, sqrt): ");
     scanf(" %c", &operador);
 
     // Validación del operador
     while (operador != '+' && operador != '-' &&
-           operador != '*' && operador != '/' && operador != '^')
+           operador != '*' && operador != '/' && operador != '^' && operador != 's')
+
     {
-        printf("Operador invalido. Use +, -, *, / o ^ : ");
+        printf("Operador invalido. Use +, -, *, / o sqrt : ");
         scanf(" %c", &operador);
     }
 
@@ -51,6 +52,9 @@ int main()
         case '^':
             printf("Resultado: %.2lf ^ %.2lf = %.4lf\n",
                    num1, num2, pow(num1, num2));
+            break;
+
+            case 's':printf("Resultado: sqrt(%.2lf) = %.4lf\n", num1, sqrt(num1));
             break;
 
         default:
