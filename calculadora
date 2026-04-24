@@ -1,72 +1,39 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
+
 int main()
 {
-    double num1, num2;
-    char operador;
+    char op;
+    double primernumero, segundonumero;
 
-    printf("Calculadora simple\n");
-    printf("--------------------\n\n");
+    printf("--- Calculadora Simple ---\n");
+    printf("Elija un operador (+, -, , /): ");
+    scanf(" %c", &op);
 
-    printf("Primer numero: ");
-    scanf("%lf", &num1);
+    printf("Ingrese el primer numero: ");
+    scanf("%lf", &primernumero);
+    printf("Ingrese el segundo numero: ");
+    scanf("%lf", &segundonumero);
 
-    printf("Segundo numero: ");
-    scanf("%lf", &num2);
-
-    printf("Operador (+, -, *, /, ^, sqrt): ");
-    scanf(" %c", &operador);
-
-    // Validación del operador
-    while (operador != '+' && operador != '-' &&
-           operador != '*' && operador != '/' && operador != '^' && operador != 's')
-
-    {
-        printf("Operador invalido. Use +, -, *, / o sqrt : ");
-        scanf(" %c", &operador);
-    }
-
-    switch (operador)
-    {
+    switch (op) {
         case '+':
-            printf("Resultado: %.2lf\n", num1 + num2);
+            printf("Resultado: %.2lf\n", primernumero + segundonumero);
             break;
-
         case '-':
-            printf("Resultado: %.2lf\n", num1 - num2);
+            printf("Resultado: %.2lf\n", primernumero - segundonumero);
             break;
-
         case '*':
-            printf("Resultado: %.2lf\n", num1 * num2);
+            printf("Resultado: %.2lf\n", primernumero * segundonumero);
             break;
-
         case '/':
-            if (num2 != 0) {
-                printf("Resultado: %.2lf\n", num1 / num2);
+            if (segundonumero != 0) {
+                printf("Resultado: %.2lf\n", primernumero / segundonumero);
             } else {
-                printf("Error: Division por cero no permitida\n");
+                printf("Error: Division por cero.\n");
             }
             break;
-
-        case '^':
-            printf("Resultado: %.2lf ^ %.2lf = %.4lf\n",
-                   num1, num2, pow(num1, num2));
-            break;
-
-            case 's':printf("Resultado: sqrt(%.2lf) = %.4lf\n", num1, sqrt(num1));
-            break;
-
         default:
-            printf("Error inesperado (esto no deberia aparecer)\n");
-            break;
+            printf("Operador no reconocido.\n");
     }
-
-      // ... todo tu código anterior ...
-
-    printf("\n\nPresiona Enter para salir...");
-    getchar();          // consume el salto de línea que quedó
-    getchar();          // espera que presiones Enter
-
-    return 0;
+    return 0; // Indica que el programa finalizó correctamente
 }
