@@ -35,11 +35,6 @@ int main()
         default:
             printf("Operador no reconocido.\n");
     }
-<<<<<<< Updated upstream
-
     return 0; // Indica que el programa finalizó correctamente
-=======
-    return 0;
->>>>>>> Stashed changes
 }
    
